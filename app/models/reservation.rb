@@ -23,8 +23,12 @@ class Reservation < ApplicationRecord
   private
 
   def send_emails
-    ReservationMailer.send_reservation_details_to_guest(guest, self).deliver_now
-    ReservationMailer.send_reservation_details_to_restaurant(guest, self).deliver_now
+    begin
+      ReservationMailer.send_reservation_details_to_guest(guest, self).deliver_now
+      ReservationMailer.send_reservation_details_to_restaurant(guest, self).deliver_now
+    rescue Exception => e
+      puts e.message
+    end
   end
 
   def reservation_at_shift
