@@ -1,3 +1,16 @@
+HEROKU
+
+CREATE RESERVATION:
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -XPOST http://peaceful-anchorage-84366.herokuapp.com/reservations -d '{"restaurant_name":"Zomato","table":"table_1","shift":"morning","reservation_at":"2019-01-11T9:30:00","guest":"Puneet Gupta","guest_count":"2"}'
+
+GET ALL RESERVATIONS:
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -XGET http://peaceful-anchorage-84366.herokuapp.com/reservations -d '{"restaurant_name":"Zomato"}'
+
+UPDATE RESERVATION (by passing reservation id):
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -XPUT http://peaceful-anchorage-84366.herokuapp.com/reservations/5 -d '{"restaurant_name":"Zomato","table":"table_1","shift":"morning","reservation_at":"2019-01-11T9:00:00","guest":"Puneet Gupta","guest_count":"2"}'
+
+==========================================================
+LOCAL
 
 CREATE RESERVATION:
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" -XPOST 0.0.0.0:3000/reservations -d '{"restaurant_name":"Zomato","table":"table_1","shift":"morning","reservation_at":"2019-01-11T9:30:00","guest":"Puneet Gupta","guest_count":"2"}'
