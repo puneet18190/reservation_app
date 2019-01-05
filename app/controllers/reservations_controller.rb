@@ -2,7 +2,15 @@ class ReservationsController < ApplicationController
   before_action :set_restaurant
 
   def index
-    @reservations = @restaurant.reservations.map{|obj| [obj.table.name, obj.reservation_at, obj.guest.name, obj.guest_count]}
+    @reservations = [] 
+    @restaurant.reservations.each do |obj| 
+      @data = {}
+      @data[:table] = obj.table.name
+      @data[:reservation_at] = obj.reservation_at
+      @data[:guest] = obj.guest.name
+      @data[:guest_count] = obj.guest_count
+      @reservations << @data
+    end
     render json: { reservations: @reservations }, status: 200
   end
 
