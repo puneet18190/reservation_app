@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  restaurant: one
+  table: one
+  shift: one
+  table: one
+  guest_count: 1
+  reservation_at: 2019-01-05 14:07:03
+
+two:
+  restaurant: two
+  table: two
+  shift: two
+  table: two
+  guest_count: 1
+  reservation_at: 2019-01-05 14:07:03

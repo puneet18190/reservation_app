@@ -1,0 +1,13 @@
+<div>Dear <%= @guest.name %>,</div>
+</br>
+<div>
+  Reservation details are as follows:
+  <ul>
+    <li>Restaurant: <%= @reservation.restaurant.name %></li>
+    <li>Time: <%= @reservation.reservation_at.to_s(:long) %></li>
+    <li>Table: <%= @reservation.table.name %></li>
+  </ul>
+</div>
+
+<div>Regards,</div>
+<div><%= @reservation.restaurant.name %></div>
