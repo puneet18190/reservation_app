@@ -24,11 +24,4 @@ class ShiftTest < ActiveSupport::TestCase
     assert shift.valid?
     assert shift.save
   end
-
-  test 'convert time to seconds since midnight' do
-    shift = Shift.new(name: 'Morning', start_time: '2018-01-01T09:00:00Z', end_time: '2018-01-01T013:00:00Z', restaurant: @restaurant)
-    assert shift.valid?
-    assert_equal 32400, shift.start_at
-    assert_equal 46800, shift.end_at
-  end
 end
